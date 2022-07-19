@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StockDetailRepository extends JpaRepository<StockDetails, Long> {
     StockDetails findByStockName(String stockName);
+
 }
