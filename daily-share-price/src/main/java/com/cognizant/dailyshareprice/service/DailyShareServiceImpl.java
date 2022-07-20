@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Transactional
 public class DailyShareServiceImpl implements DailyShareService {
 
     @Autowired
@@ -22,11 +21,13 @@ public class DailyShareServiceImpl implements DailyShareService {
     private AuthClient authClient;
 
     @Override
+    @Transactional
     public ShareDetails dailySharePrice(String shareName) {
         return repository.findByShareName(shareName);
     }
 
     @Override
+    @Transactional
     public List<ShareDetails> getAllShares() {
         return repository.findAll();
     }
