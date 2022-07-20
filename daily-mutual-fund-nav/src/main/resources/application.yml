@@ -1,9 +1,34 @@
-server:
-  port: 8082
-
 spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.H2Dialect
   application:
     name: daily-mutual-fund-nav
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ''
+    username: sa
+    url: jdbc:h2:mem:mutual
+logging:
+  level:
+    com:
+      cognizant: debug
+    org:
+      springframework: info
+      hibernate:
+        SQL: trace
+        type:
+          descriptor:
+            sql: trace
+  pattern:
+    console: '%d{dd-MM-yy} %d{HH:mm:ss.SSS} %-20.20thread %5p %-25.25logger{25} %25M%4L %m%n'
+
+server:
+  port: 8082
 
 eureka:
   client:

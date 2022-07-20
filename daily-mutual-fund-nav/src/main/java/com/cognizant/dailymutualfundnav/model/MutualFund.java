@@ -8,15 +8,15 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@Table
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class MutualFund {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Long mutualFundId;
+    private String mutualFundId;
     @Column
     private String mutualFundName;
     @Column

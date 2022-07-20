@@ -16,16 +16,12 @@ import java.util.ArrayList;
 @Service
 public class AdminDetailService implements UserDetailsService {
 
-    private static Logger logger = LoggerFactory.getLogger(AdminDetailService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AdminDetailService.class);
 
 
     @Autowired
     private UserRepository userRepository;
 
-    /**
-     * Get UserData using JpaRepository, to get data by username,
-     * throw exceptions if user not found
-     */
     @Override
     public UserDetails loadUserByUsername(String uid) {
         logger.info("START");
