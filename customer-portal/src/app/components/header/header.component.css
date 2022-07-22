@@ -1,0 +1,25 @@
+.container-fluid {
+  height: 7vh;
+  background-color: white;
+}
+
+mat-toolbar {
+  background-color: white;
+}
+
+img {
+  height: 40px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  transition: 0.3s all ease;
+}
+
+button:hover {
+  background-color: white;
+  color: #e73c37;
+}

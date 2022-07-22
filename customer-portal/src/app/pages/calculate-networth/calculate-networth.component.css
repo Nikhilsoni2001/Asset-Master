@@ -1,0 +1,21 @@
+.container-fluid {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../../assets/images/back.png");
+}
+
+.example-card {
+  max-width: 400px;
+  background-color: whitesmoke;
+}
+
+mat-card-header {
+  justify-content: center;
+  text-align: center;
+}

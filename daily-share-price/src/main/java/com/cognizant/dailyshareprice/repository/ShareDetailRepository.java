@@ -12,6 +12,6 @@ import java.util.List;
 public interface ShareDetailRepository extends JpaRepository<ShareDetails, Long> {
     ShareDetails findByShareName(String shareName);
 
-    @Query("SELECT s FROM ShareDetails s WHERE s.shareId IN (shareID) order by s.shareId")
-    List<ShareDetails> findByShareId(@Param("shareID") List<String> shareId);
+    @Query("SELECT s FROM ShareDetails s WHERE s.shareId IN (:shareID) order by s.shareId")
+    List<ShareDetails> findByShareId(@Param("shareID") List<String> shareID);
 }

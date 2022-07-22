@@ -1,0 +1,58 @@
+<div class="container-fluid h-100">
+  <div class="row">
+    <div class="col-md-6 left">
+      <div class="content">
+        <h1>{{ title }}</h1>
+        <h3>LOGIN PAGE</h3>
+        <p>Login from here to get the access</p>
+      </div>
+    </div>
+    <div class="col-md-6 right">
+      <img src="../../../assets/images/logo.png" alt="" />
+      <div class="form">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-field">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input
+                name="username"
+                [(ngModel)]="credentials.username"
+                type="text"
+                matInput
+                placeholder="Enter here..."
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="form-field">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                name="password"
+                [(ngModel)]="credentials.password"
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                placeholder="Enter here..."
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div class="button">
+            <button type="submit" mat-raised-button>LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

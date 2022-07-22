@@ -1,0 +1,26 @@
+<app-header></app-header>
+<nav class="container-fluid">
+  <div class="row">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Calculate Networth</mat-card-title>
+        <mat-card-subtitle>Your portfolio</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="../../../assets/images/networth.png"
+        alt="Calculate Networth"
+      />
+      <mat-card-content>
+        <h3 class="text-dark text-center">Networth Details</h3>
+        <h5 class="fw-bold pt-3 text-center">
+          Portfolio ID : {{ portfolioId }}
+        </h5>
+        <h5 class="fw-bold text-center">
+          Your Networth is : {{ networth | currency: "INR":"symbol" }}
+        </h5>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</nav>
+<app-footer></app-footer>

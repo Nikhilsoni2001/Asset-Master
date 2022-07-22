@@ -16,7 +16,7 @@ public interface ShareDetailsFeignProxy {
     public List<StockDetails> getAllShareDetails(@RequestHeader("Authorization") String token);
 
     @GetMapping("/dailySharePrice/{shareId}")
-    public List<Double> getDailySharePriceByIDList(@RequestHeader("Authorization") String token, @PathVariable(value = "shareId") List<String> shareId);
+    public List<Double> getDailySharePriceByIDList(@RequestHeader("Authorization") String token, @PathVariable("shareId") List<String> shareId);
 
     @GetMapping("/dailySharePrice/name/{shareName}")
     public StockDetails dailySharePrice(@RequestHeader("Authorization") String token, @PathVariable("shareName") String shareName);

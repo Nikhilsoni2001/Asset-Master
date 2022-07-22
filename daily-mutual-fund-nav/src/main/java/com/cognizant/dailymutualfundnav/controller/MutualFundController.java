@@ -29,7 +29,7 @@ public class MutualFundController {
         }
     }
 
-    @GetMapping("/dailyMutualFundNav/name/{mutualFundName}")
+    @GetMapping("/name/{mutualFundName}")
     public MutualFund getDailyMutualFundNav(@RequestHeader("Authorization") String token, @PathVariable String mutualFundName) {
         if (service.isSessionValid(token)) {
             return service.getMutualFundNav(mutualFundName);
@@ -37,7 +37,7 @@ public class MutualFundController {
         return null;
     }
 
-    @GetMapping("/dailyMutualFundNav/{mutualFundId}")
+    @GetMapping("/{mutualFundId}")
     public List<Double> getDailyMutualFundNavById(@RequestHeader("Authorization") String token, @PathVariable(value = "mutualFundId") List<String> mutualFundIdList) {
         if (service.isSessionValid(token)) {
             return service.getMutualFundByIdList(mutualFundIdList);
