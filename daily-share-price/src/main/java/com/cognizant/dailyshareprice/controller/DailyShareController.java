@@ -32,7 +32,7 @@ public class DailyShareController {
     }
 
     @GetMapping("/dailySharePrice/{shareId}")
-    public List<Double> getDailySharePriceByIDList(@RequestHeader("Authorization") String token, @PathVariable(value = "shareId") List<String> shareId) {
+    public List<Double> getDailySharePriceByIDList(@RequestHeader("Authorization") String token, @PathVariable("shareId") List<String> shareId) {
         if (service.isSessionValid(token)) {
             return service.getShareByIdList(shareId);
         }

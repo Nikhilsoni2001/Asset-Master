@@ -11,7 +11,7 @@ import java.util.List;
 
 @FeignClient(name = "DAILY-MUTUAL-FUND-NAV")
 public interface MutualFundDetailsFeignProxy {
-    @GetMapping("/dailyAllMutualFundNav")
+    @GetMapping("/dailyMutualFundNav/dailyAllMutualFundNav")
     public ResponseEntity<List<MutualFundDetails>> getAllMutualFund(@RequestHeader("Authorization") String token);
 
     @GetMapping("/dailyMutualFundNav/name/{mutualFundName}")

@@ -17,6 +17,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/NetWorth")
+@CrossOrigin("*")
 public class StockController {
     @Autowired
     private ShareDetailsFeignProxy shareDetailsFeignProxy;
@@ -40,7 +41,6 @@ public class StockController {
             List<Double> stockValueList = new ArrayList<>();
             List<Double> mutualFundValueList = new ArrayList<>();
             List<Asset> assets = assetService.getAllAssetForPortfolio(id);
-            // List<StockDetails> shareslist = proxy.findAll();
             for (Asset a : assets) {
                 if (a.getType().equals("Share")) {
                     stockAssetList.add(a.getAssetid());

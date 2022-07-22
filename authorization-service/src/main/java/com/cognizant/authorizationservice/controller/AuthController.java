@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("*")
 public class AuthController {
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
