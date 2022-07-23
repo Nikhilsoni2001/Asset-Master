@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,7 +10,9 @@ import { UserService } from 'src/app/services/user.service';
 export class CalculateNetworthComponent implements OnInit {
   portfolioId = '';
   networth: number;
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private route: ActivatedRoute) {
+    route.params.subscribe((val) => this.ngOnInit());
+  }
 
   ngOnInit(): void {
     this.portfolioId = this.userService.getPortfolioId();

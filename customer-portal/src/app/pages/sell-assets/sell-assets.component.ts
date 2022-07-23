@@ -17,35 +17,6 @@ export class SellAssetsComponent implements OnInit {
 
   constructor(private userService: UserService, private route: Router) {}
 
-  // ngOnInit(): void {
-  //   this.userService.getAllAssets().subscribe(
-  //     (response: Array<any>) => {
-  //       // response.map((res) => {
-  //       //   console.log(res);
-  //       //   this.dataSource.push(
-  //       //     new Asset(
-  //       //       res.assetid,
-  //       //       res.portfolioid,
-  //       //       res.tid,
-  //       //       res.type,
-  //       //       res.units,
-  //       //       false
-  //       //     )
-  //       //   );
-  //       // });
-  //       response.map((res) => {
-  //         res.selected = false;
-  //         console.log(res);
-  //       });
-  //       this.dataSource = response;
-  //       console.log(this.dataSource);
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
-
   ngOnInit(): void {
     this.userService.getAllAssets().subscribe(
       (response: Array<any>) => {
@@ -63,6 +34,7 @@ export class SellAssetsComponent implements OnInit {
 
   sellAssets() {
     let sell = new Sell();
+    let id = this.dataSource[0].portfolioid;
     this.dataSource.forEach((data) => {
       if (data.checked === true) {
         if (data.type === 'MF') {
@@ -72,7 +44,6 @@ export class SellAssetsComponent implements OnInit {
         }
       }
     });
-    let id = this.dataSource[0].portfolioid;
     sell.pid = +id;
 
     this.userService.sellAssets(sell).subscribe(

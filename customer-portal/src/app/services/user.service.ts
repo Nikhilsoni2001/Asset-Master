@@ -1,5 +1,6 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import endpointData from '../../assets/configuration/config.json';
 import { Sell } from '../model/sell.model';
@@ -8,7 +9,7 @@ import { Sell } from '../model/sell.model';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private route: Router) {}
 
   // calling server to generate token
   generateToken(credentials) {
@@ -55,10 +56,26 @@ export class UserService {
     );
   }
 
+  // Sell stock
   sellAssets(sell: Sell) {
+    const map1 = {};
+    const map2 = {};
+    sell.mfAssetList.forEach((val: number, key: string) => {
+      map1[key] = val;
+    });
+    sell.stockIdList.forEach((val: number, key: string) => {
+      map2[key] = val;
+    });
+
+    let obj = {
+      pid: sell.pid,
+      mfAssetList: map1,
+      stockIdList: map2,
+    };
+
     return this.http.post(
       endpointData.netWorthAPI + endpointData.sellAssetsURI,
-      sell
+      obj
     );
   }
 
@@ -76,7 +93,13 @@ export class UserService {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('portfolioId');
-    return true;
+    this.route.navigate(['/login']);
+  }
+
+  autoLogout() {
+    setTimeout(() => {
+      console.log('Hello from setTimeout');
+    }, 1000);
   }
 
   // For getting the token

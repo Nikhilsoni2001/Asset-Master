@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 
-@FeignClient(name = "DAILY-SHARE-SERVICE")
+@FeignClient(name = "DAILY-SHARE-SERVICE", url = "http://localhost:8081")
 public interface ShareDetailsFeignProxy {
 
     @GetMapping("/dailyAllSharePrice")
