@@ -5,10 +5,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SellAssetsComponent } from './pages/sell-assets/sell-assets.component';
 import { AuthGuard } from './services/auth.guard';
+import { AutoLoginGuard } from './services/auto-login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  {
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full',
+    canActivate: [AutoLoginGuard],
+  },
   {
     path: 'home',
     component: HomeComponent,

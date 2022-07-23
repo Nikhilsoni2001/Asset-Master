@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       this.userService.generateToken(this.credentials).subscribe(
         (response: any) => {
           this.userService.loginUser(response);
+          this.userService.autoLogout();
           window.location.href = '/home';
         },
         (error) => {
