@@ -33,11 +33,3 @@ logging:
   pattern:
     console: '%d{dd-MM-yy} %d{HH:mm:ss.SSS} %-20.20thread %5p %-25.25logger{25} %25M
       %4L %m%n'
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-
-
-#spring.mvc.pathmatch.matching-strategy=ant-path-matcher
