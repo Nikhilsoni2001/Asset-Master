@@ -32,3 +32,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+mat-card-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
