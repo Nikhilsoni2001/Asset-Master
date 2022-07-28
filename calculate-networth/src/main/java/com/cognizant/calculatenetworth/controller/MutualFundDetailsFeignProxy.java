@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 
-@FeignClient(name = "daily-mutual-fund", url = "http://65.0.18.110:8082")
+@FeignClient(name = "daily-mutual-fund", url = "http://43.205.98.237:8082")
 public interface MutualFundDetailsFeignProxy {
     @GetMapping("/dailyMutualFundNav/dailyAllMutualFundNav")
     public ResponseEntity<List<MutualFundDetails>> getAllMutualFund(@RequestHeader("Authorization") String token);
