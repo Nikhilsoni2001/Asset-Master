@@ -17,11 +17,11 @@ The __Customer Portal__ displays the [Login page](/screenshots/login.png "Click 
 
 If the uer credentials are correct, it generates a __token__ for the particular session. This token is also provided with an **expiration time**.
 
-Upon succesfully logging in, the user gets redirected to  [Home page](\screenshots\home.png "Click to view the home page") which has options to either show the newtworth of the user or the sell any assets
+Upon succesfully logging in, the user gets redirected to  [Home page](/screenshots/home.png "Click to view the home page") which has options to either show the newtworth of the user or the sell any assets
 
-If the user selects [Networth option](\screenshots\networth.png "Click to view the networth"), it redirects to networth page and shows the networth of the user.
+If the user selects [Networth option](/screenshots/networth.png "Click to view the networth"), it redirects to networth page and shows the networth of the user.
 
-When the user selects [Sell stocks](\screenshots\sell.png "Click to view the sell stocks page"), the list of all the assets are displayed and the user gets to choose his assets to be sold and also the number of units to be sold.After selecting,the portal displays the [updated networth page](\screenshots\networth.png "Click to view the updated networth ") along with the stocks sold.
+When the user selects [Sell stocks](/screenshots/sell.png "Click to view the sell stocks page"), the list of all the assets are displayed and the user gets to choose his assets to be sold and also the number of units to be sold.After selecting,the portal displays the [updated networth page](/screenshots/networth.png "Click to view the updated networth ") along with the stocks sold.
 
 ---    
 ## Project Details
@@ -110,3 +110,12 @@ The Web portal is made to run on local server and it interacts with the other mi
 
 ***
 
+## Screenshots :
+
+<img src="/screenshots/login.png" width="100%" />
+
+<img src="/screenshots/home.png" width="100%" />
+
+<img src="/screenshots/networth.png" width="100%" />
+
+<img src="/screenshots/sell.png" width="100%" />
