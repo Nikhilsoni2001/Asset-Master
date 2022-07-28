@@ -1,4 +1,4 @@
-<img src="/screenshots/home.png" width="100%" />
+<img src="/screenshots/login.png" width="100%" />
 
 
 # MFPE -- Portfolio Management System
@@ -12,7 +12,7 @@ There will also be a customer Portal to be  developed part of this scope that co
 ## Overview
 
 ---
-The __Customer Portal__ displays the [Login page](\screenshots\login.png "Click to view the login page") to the customer. It interacts with the Authorization microservice and provides authorization using JWT
+The __Customer Portal__ displays the [Login page](/screenshots/login.png "Click to view the login page") to the customer. It interacts with the Authorization microservice and provides authorization using JWT
 .If the credentials are not available in the in-memory H2 database, It provides with an error message showing `Invalid Credentials`.
 
 If the uer credentials are correct, it generates a __token__ for the particular session. This token is also provided with an **expiration time**.
